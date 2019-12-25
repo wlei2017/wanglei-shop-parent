@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="wanglei-shop-basics-springcloud-eureak" />
+        <module name="wanglei-shop-basics-springcloud-zuul" />
+        <module name="wanglei-shop-entitys-weixin" />
+        <module name="wanglei-shop-member-service-impl" />
+        <module name="wanglei-shop-service-weixin" />
+        <module name="wanglei-shop-weixin-service-impl" />
+        <module name="wangleis-shop-service-member" />
+      </profile>
+    </annotationProcessing>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="wanglei-shop-basics-springcloud-eureak" options="-parameters" />
+      <module name="wanglei-shop-basics-springcloud-zuul" options="-parameters" />
+      <module name="wanglei-shop-entitys-weixin" options="-parameters" />
+      <module name="wanglei-shop-member-service-impl" options="-parameters" />
+      <module name="wanglei-shop-service-weixin" options="-parameters" />
+      <module name="wanglei-shop-weixin-service-impl" options="-parameters" />
+      <module name="wangleis-shop-service-member" options="-parameters" />
+    </option>
+  </component>
+</project>
