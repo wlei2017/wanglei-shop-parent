@@ -1,0 +1,9 @@
+# Created by .ignore support plugin (hsz.mobi)
+.idea
+wanglei-shop-basics/wanglei-shop-basics-springcloud-eureak/target
+wanglei-shop-basics/wanglei-shop-basics-springcloud-zuul/target
+wanglei-shop-entitys/wanglei-shop-entitys-weixin/target
+wanglei-shop-service-api/wanglei-shop-service-weixin/target
+wanglei-shop-service-api/wangleis-shop-service-member/target
+wanglei-shop-service-impl/wanglei-shop-member-service-impl/target
+wanglei-shop-service-impl/wanglei-shop-weixin-service-impl/target
