@@ -1,6 +1,7 @@
 package com.demo.member.service;
 
 import com.demo.weixin.pojo.AppEntity;
+import com.demo.common.BaseResponse;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -9,5 +10,5 @@ import org.springframework.web.bind.annotation.GetMapping;
 public interface MemberToWeixin {
     @GetMapping("/memberToWeixin")
     @ApiOperation(value = "会员调用服务接口")
-    public AppEntity memberToWeixin();
+    public BaseResponse<AppEntity> memberToWeixin();
 }

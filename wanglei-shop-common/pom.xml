@@ -9,25 +9,17 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
+    <artifactId>wanglei-shop-common</artifactId>
     <packaging>pom</packaging>
     <modules>
-        <module>wanglei-shop-service-weixin</module>
-        <module>wangleis-shop-service-member</module>
+        <module>wanglei-shop-common-core</module>
     </modules>
-    <artifactId>wanglei-shop-service-api</artifactId>
-
 
     <dependencies>
-        <!-- swagger-spring-boot -->
         <dependency>
-            <groupId>com.spring4all</groupId>
-            <artifactId>swagger-spring-boot-starter</artifactId>
-            <version>1.7.0.RELEASE</version>
-        </dependency>
-        <dependency>
-            <groupId>com.demo</groupId>
-            <artifactId>wanglei-shop-common-core</artifactId>
-            <version>1.0-SNAPSHOT</version>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-redis</artifactId>
         </dependency>
     </dependencies>
+
 </project>

@@ -10,6 +10,7 @@
         <module>wanglei-shop-service-api</module>
         <module>wanglei-shop-entitys</module>
         <module>wanglei-shop-service-impl</module>
+        <module>wanglei-shop-common</module>
     </modules>
 
     <groupId>com.demo</groupId>
