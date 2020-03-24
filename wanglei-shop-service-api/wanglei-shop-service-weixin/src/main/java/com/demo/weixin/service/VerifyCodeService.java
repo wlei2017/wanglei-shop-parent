@@ -7,6 +7,7 @@ import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiImplicitParams;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 /**
  * 微信验证码接口
@@ -24,5 +25,5 @@ public interface VerifyCodeService {
     @ApiImplicitParams({
             @ApiImplicitParam(paramType = "query", name = "phone", dataType = "String", required = true, value = "用户手机号码"),
             @ApiImplicitParam(paramType = "query", name = "code", dataType = "String", required = true, value = "微信注册码") })
-    public BaseResponse<JSONObject> verifyCode(String phone,String code);
+    public BaseResponse<JSONObject> verifyCode(@RequestParam("phone") String phone,@RequestParam("code") String code);
 }

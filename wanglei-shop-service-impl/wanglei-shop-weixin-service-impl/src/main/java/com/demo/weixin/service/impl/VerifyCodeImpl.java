@@ -32,6 +32,8 @@ public class VerifyCodeImpl extends BaseApiService<JSONObject> implements Verify
         if (!code.equals(wxCode)){
             return setResultError("验证码不正确，请重新输入");
         }
+//        //判断完需删除key对应的值
+//        redisUtil.delKey(Constants.WEIXINCODE_KEY + phone);
         return setResultSuccess("验证码正确");
     }
 }

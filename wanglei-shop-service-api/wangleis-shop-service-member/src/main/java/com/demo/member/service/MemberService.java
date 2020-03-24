@@ -7,6 +7,7 @@ import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiImplicitParams;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 @Api(tags = "会员服务接口")
 public interface MemberService {
@@ -16,5 +17,5 @@ public interface MemberService {
             required = true,value = "用户手机号码")
     })
     @PostMapping("/existMobile")
-    public BaseResponse<UserEntity> exitsMobile(String phone);
+    public BaseResponse<UserEntity> exitsMobile(@RequestParam("mobile") String mobile);
 }
