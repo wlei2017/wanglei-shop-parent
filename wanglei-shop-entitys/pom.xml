@@ -12,6 +12,7 @@
     <packaging>pom</packaging>
     <modules>
         <module>wanglei-shop-entitys-weixin</module>
+        <module>wanglei-shop-entitys-member</module>
     </modules>
     <artifactId>wanglei-shop-entitys</artifactId>
 
