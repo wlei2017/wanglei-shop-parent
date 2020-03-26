@@ -15,3 +15,9 @@ spring:
     password: root
     driver-class-name: com.mysql.jdbc.Driver
     url: jdbc:mysql://121.40.70.177:3306/member
+
+####打印MyBatias日志
+logging:
+  level:
+  ### 开发环境使用DEBUG 生产环境info或者error
+   com.demo.member.mapper: DEBUG

@@ -1,7 +1,7 @@
 package com.demo.member.service;
 
 import com.demo.common.BaseResponse;
-import com.demo.member.pojo.UserEntity;
+import com.demo.member.output.UserOutDTO;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiImplicitParams;
@@ -17,5 +17,5 @@ public interface MemberService {
             required = true,value = "用户手机号码")
     })
     @PostMapping("/existMobile")
-    public BaseResponse<UserEntity> exitsMobile(@RequestParam("mobile") String mobile);
+    public BaseResponse<UserOutDTO> exitsMobile(@RequestParam("mobile") String mobile);
 }

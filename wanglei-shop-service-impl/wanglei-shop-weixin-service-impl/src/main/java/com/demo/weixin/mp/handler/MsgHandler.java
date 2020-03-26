@@ -1,7 +1,7 @@
 package com.demo.weixin.mp.handler;
 
 import com.demo.common.BaseResponse;
-import com.demo.member.pojo.UserEntity;
+import com.demo.member.output.UserOutDTO;
 import com.demo.utils.RedisUtil;
 import com.demo.utils.RegexUtils;
 import com.demo.weixin.feign.MemberServiceFeign;
@@ -66,13 +66,13 @@ public class MsgHandler extends AbstractHandler {
 		// 2.校验输入的手机号格式是否正确
 		if (RegexUtils.checkMobile(fromContent)){
 			//调用会员接口查询手机号是否已经注册
-			BaseResponse<UserEntity> userEntity = memberServiceFeign.exitsMobile(fromContent);
-			if (userEntity.getRtnCode().equals(Constants.HTTP_RES_CODE_200)){
+			BaseResponse<UserOutDTO> userOutDTO = memberServiceFeign.exitsMobile(fromContent);
+			if (userOutDTO.getRtnCode().equals(Constants.HTTP_RES_CODE_200)){
 				return new TextBuilder().build("手机号" + fromContent + "已经注册！",wxMessage,weixinService);
 			}
 			//可能会报500或者其他错误
-			if (!userEntity.getRtnCode().equals(Constants.HTTP_RES_CODE_EXISTMOBILE_202)){
-				return new TextBuilder().build(userEntity.getMsg(),wxMessage,weixinService);
+			if (!userOutDTO.getRtnCode().equals(Constants.HTTP_RES_CODE_EXISTMOBILE_202)){
+				return new TextBuilder().build(userOutDTO.getMsg(),wxMessage,weixinService);
 			}
 			// 3.生成随机的四位验证码
 			int registCode = registCode();
