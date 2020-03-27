@@ -27,4 +27,15 @@ public interface Constants {
 
     Integer HTTP_RES_CODE_EXISTMOBILE_202 = 202;
 
+    //登录token前缀
+    String MEMBER_TOKEN_PRE = "member.login";
+
+    //登录类型 PC
+    String LOGIN_TYPE_PC = "PC";
+
+    //登录类型 iOS
+    String LOGIN_TYPE_IOS = "IOS";
+
+    //登录类型 Android
+    String LOGIN_TYPE_ANDROID = "Android";
 }
