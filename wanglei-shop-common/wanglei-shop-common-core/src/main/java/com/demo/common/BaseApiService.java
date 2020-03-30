@@ -35,4 +35,9 @@ public class BaseApiService<T> {
     public BaseResponse<T> setResult(Integer code, String msg, Object data) {
         return new BaseResponse(code, msg, data);
     }
+
+    // 调用数据库层判断
+    public Boolean toDaoResult(int result) {
+        return result > 0 ? true : false;
+    }
 }

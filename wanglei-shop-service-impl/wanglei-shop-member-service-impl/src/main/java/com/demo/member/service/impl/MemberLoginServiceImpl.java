@@ -11,8 +11,10 @@ import com.demo.member.mapper.entity.UserDo;
 import com.demo.member.mapper.entity.UserTokenDo;
 import com.demo.member.service.MemberLoginService;
 import com.demo.token.GenerateToken;
+import com.demo.transaction.RedisDataSoureceTransaction;
 import com.demo.utils.MD5Util;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.transaction.TransactionStatus;
 import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -30,6 +32,9 @@ public class MemberLoginServiceImpl extends BaseApiService<JSONObject> implement
 
     @Autowired
     private GenerateToken generateToken;
+
+    @Autowired
+    private RedisDataSoureceTransaction redisDataSoureceTransaction;
 
     @Override
     public BaseResponse<JSONObject> login(@RequestBody UserLoginInpDTO userLoginInpDTO) {
@@ -57,30 +62,53 @@ public class MemberLoginServiceImpl extends BaseApiService<JSONObject> implement
         if (userDo == null){
             return setResultError("用户名或密码错误");
         }
-        //根据 userId、登录类型和是否可用查询用户之前是否登录过
-        Long userId = userDo.getUserId();
-        UserTokenDo userTokenDo = userTokenMapper.selectByUserIdAndLoginType(userId, loginType);
+        TransactionStatus transactionStatus = null;
 
-        //插入新的登录信息到唯一登录表
-        //首先需要生成新的token
-        String prifix = Constants.MEMBER_TOKEN_PRE + loginType + ":";
-        String newToken = generateToken.createToken(prifix, String.valueOf(userId));
-        UserTokenDo userTokenDo1 = new UserTokenDo();
-        userTokenDo1.setDeviceInfor(userLoginInpDTO.getDeviceInfor());
-        userTokenDo1.setLoginType(userLoginInpDTO.getLoginType());
-        userTokenDo1.setToken(newToken);
-        userTokenDo1.setUserId(userId);
-        userTokenMapper.insertUserToken(userTokenDo1);
+        try {
+            //根据 userId、登录类型和是否可用查询用户之前是否登录过
+            Long userId = userDo.getUserId();
+            UserTokenDo userTokenDo = userTokenMapper.selectByUserIdAndLoginType(userId, loginType);
 
-        //将老的token从redis删除
-        if (userTokenDo != null){
-            //说明已经登录过，需要更新为不可用
-            String token = userTokenDo.getToken();
-            userTokenMapper.updateTokenAvailability(token);
-            generateToken.removeToken(token);
+            // 开启事务
+            transactionStatus = redisDataSoureceTransaction.begin();
+            //将老的token从redis删除
+            if (userTokenDo != null){
+                //说明已经登录过，需要更新为不可用
+                String token = userTokenDo.getToken();
+                Boolean removeToken = generateToken.removeToken(token);
+                int updateTokenAvailability = userTokenMapper.updateTokenAvailability(token);
+                if (!toDaoResult(updateTokenAvailability)){
+                    return setResultError("系统错误");
+                }
+            }
+            //插入新的登录信息到唯一登录表
+            //首先需要生成新的token
+            String prifix = Constants.MEMBER_TOKEN_PRE + loginType + ":";
+            String newToken = generateToken.createToken(prifix, String.valueOf(userId));
+            UserTokenDo userTokenDo1 = new UserTokenDo();
+            userTokenDo1.setDeviceInfor(userLoginInpDTO.getDeviceInfor());
+            userTokenDo1.setLoginType(userLoginInpDTO.getLoginType());
+            userTokenDo1.setToken(newToken);
+            userTokenDo1.setUserId(userId);
+            int insertUserToken = userTokenMapper.insertUserToken(userTokenDo1);
+            if (!toDaoResult(insertUserToken)){
+                //事务回滚
+                redisDataSoureceTransaction.rollback(transactionStatus);
+                return setResultError("系统错误！");
+            }
+
+            JSONObject data = new JSONObject();
+            data.put("token",newToken);
+            //提交事务
+            redisDataSoureceTransaction.commit(transactionStatus);
+            return setResultSuccess(data);
+        } catch (Exception e) {
+            try {
+                redisDataSoureceTransaction.rollback(transactionStatus);
+            } catch (Exception e1) {
+
+            }
+            return setResultError("系统错误！");
         }
-        JSONObject data = new JSONObject();
-        data.put("token",newToken);
-        return setResultSuccess(data);
     }
 }
