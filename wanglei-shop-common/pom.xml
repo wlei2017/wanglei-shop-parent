@@ -13,6 +13,7 @@
     <packaging>pom</packaging>
     <modules>
         <module>wanglei-shop-common-core</module>
+        <module>wanglei-shop-common-web-core</module>
     </modules>
 
     <dependencies>
