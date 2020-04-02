@@ -38,4 +38,7 @@ public interface Constants {
 
     //登录类型 Android
     String LOGIN_TYPE_ANDROID = "Android";
+
+    // 用户信息不存在
+    Integer HTTP_RES_CODE_NOTUSER_203 = 203;
 }

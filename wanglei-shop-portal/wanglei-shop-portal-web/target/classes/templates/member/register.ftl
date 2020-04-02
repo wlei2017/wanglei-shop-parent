@@ -70,7 +70,7 @@
 
 				<div class="layui-input-block-weixinQRcode"
 					style="text-align: center;">
-					<img alt="" src="../img/erweima.jpg">
+					<img src="../res/static/img/erweima.jpg">
 
 					<div style="text-align: center; font-size: 14px; color: #FF5722;">
 						关注微信公众号,发送手机号码可获得注册码</div>
