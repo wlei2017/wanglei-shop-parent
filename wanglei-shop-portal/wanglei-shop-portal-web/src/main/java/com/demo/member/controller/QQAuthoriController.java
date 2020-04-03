@@ -62,8 +62,11 @@ public class QQAuthoriController extends BaseWebController {
     }
 
     /**
-     *
+     * 获取accessToken和openId
      * @param code
+     * @param request
+     * @param response
+     * @param httpSession
      * @return
      */
     @RequestMapping("/qqLoginBack")

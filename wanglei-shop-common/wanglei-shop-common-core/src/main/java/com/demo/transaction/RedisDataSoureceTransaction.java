@@ -9,6 +9,9 @@ import org.springframework.stereotype.Component;
 import org.springframework.transaction.TransactionStatus;
 import org.springframework.transaction.interceptor.DefaultTransactionAttribute;
 
+/**
+ * Redis与 DataSource 事务封装
+ */
 @Component
 @Scope(ConfigurableListableBeanFactory.SCOPE_PROTOTYPE) //多例
 public class RedisDataSoureceTransaction {
