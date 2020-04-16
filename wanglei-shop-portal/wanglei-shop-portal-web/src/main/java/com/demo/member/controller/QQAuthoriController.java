@@ -52,7 +52,6 @@ public class QQAuthoriController extends BaseWebController {
     @RequestMapping("/qqAuth")
     public String qqAuth(HttpServletRequest request) {
         try {
-            new Oauth()
             String authorizeURL = new Oauth().getAuthorizeURL(request);
             log.info("authorizeURL:{}", authorizeURL);
             return "redirect:" + authorizeURL;
