@@ -9,19 +9,30 @@ spring:
         expose-session-attributes: true
         request-context-attribute: request
         suffix: .ftl
-        template-loader-path:
-        - classpath:/templates
+#        template-loader-path:
+#        - classpath: /templates
     application:
         name: app-mayikt-portal-web
 ###服务注册到eureka地址
 eureka:
   client:
     service-url:
-           defaultZone: http://localhost:8100/eureka
-#           defaultZone: http://121.40.70.177:8080/eureka/
+#           defaultZone: http://localhost:8100/eureka
+           defaultZone: http://121.40.70.177:8080/eureka/
 server:
-    port: 8081
-
+    port: 8080
 redis:
   hostname: 192.168.146.128
   port: 6379
+
+xxl-sso:
+  excluded:
+    paths:
+
+xxl:
+  sso:
+    logout:
+      path: /logout
+    redis:
+      address: redis://192.168.146.128:6379
+    server: http://localhost:8080/xxl-sso-server

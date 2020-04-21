@@ -1,0 +1,33 @@
+server:
+  port: 8082
+redis:
+  hostname: 192.168.146.128
+  port: 6379
+spring:
+  freemarker:
+    cache: false
+    request-context-attribute: request
+#    - classpath: /templates
+  mvc:
+    static-path-pattern: /static/**
+  resources:
+    static-locations: classpath:/static/
+  application:
+    name: app-mayikt-portal-pay-web
+xxl:
+  sso:
+    logout:
+      path: /logout
+    redis:
+      address: redis://192.168.146.128:6379
+    server: http://localhost:8080/xxl-sso-server
+xxl-sso:
+  excluded:
+    paths:
+
+###服务注册到eureka地址
+eureka:
+  client:
+    service-url:
+      #           defaultZone: http://localhost:8100/eureka
+      defaultZone: http://121.40.70.177:8080/eureka/

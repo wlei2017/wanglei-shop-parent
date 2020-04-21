@@ -13,6 +13,7 @@
     <packaging>pom</packaging>
     <modules>
         <module>wanglei-shop-portal-web</module>
+        <module>wanglei-shop-portal-pay-web</module>
     </modules>
 
     <dependencies>
