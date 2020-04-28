@@ -14,6 +14,7 @@
     <modules>
         <module>wanglei-shop-api-member-dto</module>
         <module>wanglei-shop-api-weixin-dto</module>
+        <module>wanglei-shop-api-product-dto</module>
     </modules>
 
 

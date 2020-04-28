@@ -13,6 +13,7 @@
     <modules>
         <module>wanglei-shop-service-weixin</module>
         <module>wangleis-shop-service-member</module>
+        <module>wanglei-shop-service-goods</module>
     </modules>
     <artifactId>wanglei-shop-service-api</artifactId>
 
