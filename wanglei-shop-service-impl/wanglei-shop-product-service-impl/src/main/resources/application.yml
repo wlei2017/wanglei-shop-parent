@@ -13,7 +13,7 @@ spring:
   application:
     name:  app-mayikt-goods
   redis:
-    host: 192.168.146.128
+    host: 192.168.179.128
     port: 6379
     pool:
       max-idle: 100
@@ -31,7 +31,7 @@ spring:
     ####集群名称
      cluster-name: elasticsearch-cluster
     ####地址 
-     cluster-nodes: 192.168.146.128:9300
+     cluster-nodes: 192.168.179.128:9300
 xuecheng:
   elasticsearch:
-    hostlist: ${eshostlist:192.168.146.128:9200,192.168.146.128:9201}
+    hostlist: ${eshostlist:192.168.179.128:9200,192.168.179.128:9201}
