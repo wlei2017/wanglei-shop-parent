@@ -8,5 +8,6 @@ import java.util.List;
 
 public interface ProductSearchService {
     @GetMapping("/search")
+    //dd
     public BaseResponse<List<ProductOutDto>> search(String name);
 }
