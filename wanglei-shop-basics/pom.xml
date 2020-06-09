@@ -14,6 +14,7 @@
         <module>wanglei-shop-basics-springcloud-eureak</module>
         <module>wanglei-shop-basics-springcloud-zuul</module>
         <module>wanglei-shop-xxl-sso-server</module>
+        <module>wanglei-shop-basics-elk-kafka</module>
     </modules>
     <artifactId>wanglei-shop-basics</artifactId>
 
