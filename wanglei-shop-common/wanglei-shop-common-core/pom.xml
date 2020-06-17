@@ -23,6 +23,11 @@
             <version>5.2.2.RELEASE</version>
             <scope>compile</scope>
         </dependency>
+        <dependency>
+            <groupId>ma.glasnost.orika</groupId>
+            <artifactId>orika-core</artifactId>
+            <version>1.5.2</version>
+        </dependency>
 
     </dependencies>
 

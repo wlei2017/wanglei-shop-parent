@@ -14,6 +14,7 @@
         <module>wanglei-shop-weixin-service-impl</module>
         <module>wanglei-shop-member-service-impl</module>
         <module>wanglei-shop-product-service-impl</module>
+        <module>wanglei-shop-pay-service-impl</module>
     </modules>
     <artifactId>wanglei-shop-service-impl</artifactId>
 

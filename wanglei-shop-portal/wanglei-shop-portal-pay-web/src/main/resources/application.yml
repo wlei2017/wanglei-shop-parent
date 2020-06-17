@@ -1,33 +1,25 @@
-server:
-  port: 8082
-redis:
-  hostname: 192.168.146.128
-  port: 6379
+#### 整合freemarker
 spring:
   freemarker:
     cache: false
+    charset: UTF-8
+    check-template-location: true
+    content-type: text/html
+    expose-request-attributes: true
+    expose-session-attributes: true
     request-context-attribute: request
-#    - classpath: /templates
-  mvc:
-    static-path-pattern: /static/**
-  resources:
-    static-locations: classpath:/static/
+    suffix: .ftl
+  #        template-loader-path:
+  #        - classpath: /templates
   application:
     name: app-mayikt-portal-pay-web
-xxl:
-  sso:
-    logout:
-      path: /logout
-    redis:
-      address: redis://192.168.146.128:6379
-    server: http://localhost:8080/xxl-sso-server
-xxl-sso:
-  excluded:
-    paths:
-
 ###服务注册到eureka地址
 eureka:
   client:
     service-url:
-      #           defaultZone: http://localhost:8100/eureka
-      defaultZone: http://121.40.70.177:8080/eureka/
+       defaultZone: http://localhost:8100/eureka
+server:
+  port: 8082
+redis:
+  hostname: 192.168.179.128
+  port: 6379

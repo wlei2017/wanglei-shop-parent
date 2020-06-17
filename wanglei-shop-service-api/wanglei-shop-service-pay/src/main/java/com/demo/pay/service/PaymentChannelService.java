@@ -1,0 +1,17 @@
+package com.demo.pay.service;
+
+import com.demo.pay.out.PaymentChannelDTO;
+import org.springframework.web.bind.annotation.GetMapping;
+
+import java.util.List;
+
+public interface PaymentChannelService {
+    /**
+     * 查询所有支付渠道
+     *
+     * @return
+     */
+    @GetMapping("/selectAll")
+    public List<PaymentChannelDTO> selectAll();
+
+}
