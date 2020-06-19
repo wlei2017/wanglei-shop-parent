@@ -23,10 +23,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 import com.alibaba.fastjson.JSONObject;
 
-import nl.bitwalker.useragentutils.Browser;
-import nl.bitwalker.useragentutils.UserAgent;
-import nl.bitwalker.useragentutils.Version;
-
 
 @Controller
 public class LoginController extends BaseWebController {

@@ -25,7 +25,7 @@ public class AopLogAspect {
 
     // 申明一个切点 里面是 execution表达式
     @Pointcut("execution(* com.demo.*.service.impl.*.*(..))")
-//    @Pointcut("@annotation(com.demo.elk.annotatin.LogAnnotation)")
+//    @Pointcut("@annotation(com.unionpay.elk.annotatin.LogAnnotation)")
     private void serviceAspect() {
     }
 

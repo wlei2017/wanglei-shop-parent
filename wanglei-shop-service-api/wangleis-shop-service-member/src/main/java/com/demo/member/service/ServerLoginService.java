@@ -1,6 +1,5 @@
 package com.demo.member.service;
 
-import com.alibaba.fastjson.JSONObject;
 import com.demo.common.BaseResponse;
 import com.demo.member.input.UserLoginServerInpDTO;
 import com.demo.member.output.UserOutDTO;

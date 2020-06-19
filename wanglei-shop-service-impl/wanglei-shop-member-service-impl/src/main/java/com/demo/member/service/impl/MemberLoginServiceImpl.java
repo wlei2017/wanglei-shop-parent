@@ -19,8 +19,6 @@ import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.UUID;
-
 @RestController
 public class MemberLoginServiceImpl extends BaseApiService<JSONObject> implements MemberLoginService {
 

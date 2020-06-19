@@ -1,11 +1,11 @@
-//package com.demo.product.service.impl;
+//package com.unionpay.product.service.impl;
 //
-//import com.demo.common.BaseApiService;
-//import com.demo.common.BaseResponse;
-//import com.demo.goods.service.ProductSearchService;
-//import com.demo.product.output.ProductOutDto;
-//import com.demo.product.service.es.ProductEntity;
-//import com.demo.product.service.reposiory.ProductReposiory;
+//import com.unionpay.common.BaseApiService;
+//import com.unionpay.common.BaseResponse;
+//import com.unionpay.goods.service.ProductSearchService;
+//import com.unionpay.product.output.ProductOutDto;
+//import com.unionpay.product.service.es.ProductEntity;
+//import com.unionpay.product.service.reposiory.ProductReposiory;
 //import ma.glasnost.orika.MapperFactory;
 //import ma.glasnost.orika.impl.DefaultMapperFactory;
 //import org.elasticsearch.index.query.BoolQueryBuilder;

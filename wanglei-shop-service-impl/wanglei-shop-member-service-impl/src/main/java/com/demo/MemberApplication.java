@@ -13,7 +13,7 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
 @EnableFeignClients
 @EnableSwagger2Doc
 @EnableApolloConfig
-@MapperScan(basePackages = "com.demo.member.mapper")
+@MapperScan(basePackages = "com.unionpay.member.mapper")
 public class MemberApplication {
     public static void main(String[] args) {
         SpringApplication.run(MemberApplication.class,args);

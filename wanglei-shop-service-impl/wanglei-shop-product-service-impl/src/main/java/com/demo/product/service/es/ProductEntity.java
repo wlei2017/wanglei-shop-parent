@@ -1,4 +1,4 @@
-//package com.demo.product.service.es;
+//package com.unionpay.product.service.es;
 //
 //import lombok.Data;
 //import org.springframework.data.elasticsearch.annotations.Document;

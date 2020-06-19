@@ -12,6 +12,7 @@
         <module>wanglei-shop-common</module>
         <module>wanglei-shop-api-dto</module>
         <module>wanglei-shop-portal</module>
+        <module>wanglei-shop-plugin</module>
     </modules>
 
     <groupId>com.demo</groupId>

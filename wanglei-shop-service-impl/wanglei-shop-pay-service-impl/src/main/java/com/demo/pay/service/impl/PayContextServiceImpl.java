@@ -45,7 +45,7 @@ public class PayContextServiceImpl extends BaseApiService<JSONObject> implements
         if (specificStrategy == null){
             return setResultError("没有找到对应的方法");
         }
-        String html = specificStrategy.toHtml(classAddress, payMentTransacDTOBaseResponse.getData());
+        String html = specificStrategy.toHtml(paymentChannelEntity, payMentTransacDTOBaseResponse.getData());
         //4.将html返回
         JSONObject data = new JSONObject();
         data.put("html",html);

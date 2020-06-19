@@ -10,7 +10,6 @@ import com.demo.member.feign.MemberLoginServiceFeign;
 import com.demo.member.feign.QQAuthoriFeign;
 import com.demo.member.input.UserLoginInpDTO;
 import com.demo.utils.CookieUtils;
-import com.demo.utils.WLBeanUtils;
 import com.demo.web.constants.WebConstants;
 import com.qq.connect.api.OpenID;
 import com.qq.connect.api.qzone.UserInfo;

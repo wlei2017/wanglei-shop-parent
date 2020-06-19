@@ -1,9 +1,7 @@
 package com.xxl.sso.server.controller;
 
-import com.alibaba.fastjson.JSONObject;
 import com.demo.base.BaseWebController;
 import com.demo.common.BaseResponse;
-import com.demo.constants.Constants;
 import com.demo.member.input.UserLoginServerInpDTO;
 import com.demo.member.output.UserOutDTO;
 import com.xxl.sso.core.conf.Conf;
@@ -11,8 +9,6 @@ import com.xxl.sso.core.login.SsoWebLoginHelper;
 import com.xxl.sso.core.store.SsoLoginStore;
 import com.xxl.sso.core.store.SsoSessionIdHelper;
 import com.xxl.sso.core.user.XxlSsoUser;
-import com.xxl.sso.server.core.model.UserInfo;
-import com.xxl.sso.server.core.result.ReturnT;
 import com.xxl.sso.server.feign.ServerLoginServiceFeign;
 import com.xxl.sso.server.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;

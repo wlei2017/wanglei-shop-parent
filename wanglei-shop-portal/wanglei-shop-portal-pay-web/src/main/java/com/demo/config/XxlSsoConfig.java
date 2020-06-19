@@ -1,4 +1,4 @@
-//package com.demo.config;
+//package com.unionpay.config;
 //
 //import com.xxl.sso.core.conf.Conf;
 //import com.xxl.sso.core.filter.XxlSsoWebFilter;
