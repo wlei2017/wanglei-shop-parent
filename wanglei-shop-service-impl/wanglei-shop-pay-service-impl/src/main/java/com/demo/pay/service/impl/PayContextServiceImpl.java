@@ -40,7 +40,7 @@ public class PayContextServiceImpl extends BaseApiService<JSONObject> implements
         if (StringUtils.isEmpty(classAddress)){
             return setResultError("类路径名为空");
         }
-        //3.2 使用策略模式获取不同的支付方式
+        //3.2 使用反射机制初始化子类
         PayStrategy specificStrategy = StrategyFactory.getSpecificStrategy(classAddress);
         if (specificStrategy == null){
             return setResultError("没有找到对应的方法");
